@@ -200,34 +200,34 @@ publishing {
         }
     }
 
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-            pom {
-                artifactId = 'pinecone-client'
-                name = 'pinecone-client'
-                description = 'The Pinecone.io Java Client'
-            }
-        }
-    }
+//    publications {
+//        mavenJava(MavenPublication) {
+//            from components.java
+//            pom {
+//                artifactId = 'pinecone-client'
+//                name = 'pinecone-client'
+//                description = 'The Pinecone.io Java Client'
+//            }
+//        }
+//    }
     repositories {
         mavenLocal()
     }
 }
 
-nexusPublishing {
-    repositories {
-        sonatype {
-            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
-            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
-        }
-    }
-}
+//nexusPublishing {
+//    repositories {
+//        sonatype {
+//            nexusUrl.set(uri("https://s01.oss.sonatype.org/service/local/"))
+//            snapshotRepositoryUrl.set(uri("https://s01.oss.sonatype.org/content/repositories/snapshots/"))
+//        }
+//    }
+//}
 
-signing {
-    def signingKeyId = findProperty("signingKeyId")
-    def signingKey = findProperty("signingKey")
-    def signingPassword = findProperty("signingPassword")
-    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
-    sign publishing.publications.pineconeClientMaven
-}
+//signing {
+//    def signingKeyId = findProperty("signingKeyId")
+//    def signingKey = findProperty("signingKey")
+//    def signingPassword = findProperty("signingPassword")
+//    useInMemoryPgpKeys(signingKeyId, signingKey, signingPassword)
+//    sign publishing.publications.pineconeClientMaven
+//}
